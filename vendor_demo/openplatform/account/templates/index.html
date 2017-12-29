@@ -1,0 +1,98 @@
+{% load staticfiles bxtags %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
+    <script src="{% static 'jquery/dist/jquery.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/qrcode.js' %}"></script>
+    <script src="{% static 'js/currency_deposit_or_withdraw.js' %}"></script>
+</head>
+</html>
+
+<body>
+  <div class="container" center>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-4">
+        <div class="slogan" style="width: 60%">
+          <h2>恭喜你，已经成功登录</h2>
+          <center>
+            <a href="/account/logout/">退出</a>
+          </center>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3> 用户的详细信息 </h3>
+      <p>
+        userid: {{ user.userid }}
+      </p>
+      <p>
+      username : {{ user.username }}
+      </p>
+      <p>
+      target_id: {{ user.target_id }}
+      </p>
+      <p>
+      BTC余额: {{ fund.balance|dformat}}
+      </p>
+    </div>
+    <div>
+      <h3> 充值和提现 </h3>
+      <p>
+      <button class="btn btn-primary" onclick="create_deposit('BTC')"> BTC充值
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="deposit_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">BTC充值Demo</h4>
+          </div>
+          <div class="modal-body">
+            <center>
+              <p>
+              <img id='deposit_qr_code'/>
+              </p>
+              <p>
+                请用Bixin App 扫码完成转账充值
+              </p>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+      </p>
+      <p>
+      <button class="btn btn-primary" onclick="create_withdraw('BTC')"> BTC提现 </div>
+        <!-- Modal -->
+        <div class="modal fade" id="withdraw_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">BTC提现Demo</h4>
+              </div>
+              <div class="modal-body">
+                  <label>提现BTC数量</label> <input name="amount" id="withdraw_amount"></input>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" onclick="submit_withdraw()">确认提现</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </p>
+    <div class="container">
+      <p>
+        <a href="{% url 'servicer:bot_detail' %}"> 查看JS SDK 相关demo </a>
+      </p>
+    </div>
+</body>

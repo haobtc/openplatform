@@ -1,0 +1,7 @@
+django==1.10.2
+pytz
+psycopg2
+gunicorn
+python-bitcoinlib==0.7.0
+pycrypto
+requests

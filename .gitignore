@@ -1,1 +1,8 @@
+**/*.swc
+**/*.pyc
+**/*.swo
+**/*.swp
+**/*/local_settings.py
+**/*.arcconfig
+**/*.db
 **/*.DS_Store

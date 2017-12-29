@@ -1,0 +1,98 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
+    <script src="{% static 'jquery/dist/jquery.js' %}"></script>
+    <script src="{% static 'js/qrcode.js' %}"></script>
+    <script src="{% static 'js/bx_qr_code.js' %}"></script>
+</head>
+</html>
+
+<body>
+  <div class="container" center>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-4">
+        {% if request.from_device == 'phone' %}
+          <div class="slogan" style="width: 60%">
+            <h1>手机快捷登录Demo</h1>
+          </div>
+          <div class="login_button">
+            <a href="" class="button" id="login_button"> 一键登录 </a>
+          </div>
+        {% else %}
+        <div class="slogan" style="width: 60%">
+          <h1>扫码登录Demo</h1>
+        </div>
+          <div class="qr-login">
+              <div class="login_qrcode" id='bxQRCode'>
+                <img src="{% static 'images/qr_refresh.png' %}" alt="Scan QR Login" class="bx-qr-code" width="160" id='bxQRCodeImage' onclick='javascript:init_qr_code("{% static "images/qr_refresh.png" %}", "{{ config.QR_LOGIN_URL }}");'>
+              </div>
+              </br>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+    <footer></footer>
+</body>
+
+<script>
+init_qr_code("{% static 'images/qr_refresh.png' %}", "{{ config.QR_LOGIN_URL }}");
+var from_device = "{{ request.from_device }}";
+</script>
+
+
+<style>
+    .login_box {
+    background: #fafbfb;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .login_qrcode {
+        margin-bottom: 10px;
+    }
+    a {
+        text-decoration: none;
+        color: $white;
+        span {
+            border-bottom: 1px solid #fafbfb;
+        }
+    }
+}
+.login_title {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.login_button{
+  font-size: 13px;
+  background: #fff;
+  border-radius: 4px;
+  background: #fff;
+  padding-left: 1px;
+  padding-right: 1px;
+  padding-top: 1px;
+  padding-bottom: 2px;
+  text-align: center; }
+}
+
+.dl-btn-qr{
+  margin-top: 15px;
+}
+.dl-btn-qr-link{
+  font-size: 14px;
+  opacity: 0.6;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.header {
+  background: #0166ff;
+  padding-top: 20px;
+}
+</style>
