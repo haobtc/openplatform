@@ -222,6 +222,9 @@ class Bot(object):
 
         return self.api_post(msg_router, post_data, headers=headers)
 
+    def send_select_msg(self, data):
+        return self.send_bot_msg('/api/v2/bot.postSelect', data)
+
     def send_set_bot_menu(self, data):
         headers = {
             'Accept': 'application/json',

@@ -33,3 +33,21 @@ sudo ln -s project_root/etc/supervisor.d/default.conf /etc/supervisor/conf.d/def
 ```
 sudo supervisord -c /etc/supervisor/supervisor.conf
 ```
+
+### 创建menu
+
+```
+python manage.py create_bot_menu
+```
+
+## 网站展示
+
+用户可以到网站[https://platformapidemo.bixin.com/](https://platformapidemo.bixin.com/),这里提供了登录，转账，提现和JS-SDK的相关功能，可以进行查看
+
+
+## 服务号基础功能展示
+
+可以通过币信App扫码，扫码关注下面这个Demo二维码：
+![image](https://raw.githubusercontent.com/haobtc/openplatform/master/images/bot_demo_qrcode.png)
+
+在这里创建了基础的menu和最基础的用户交互。
