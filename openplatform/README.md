@@ -5,12 +5,12 @@
 默认使用sqlite
 
 ```
-python manage.py migrate bixin
+python manage.py migrate
 ```
 
 ### Settings
 
-在币信https://bixin.com/openplatform/页面中获取你创建的vendor的相关信息，配置下面的参数：
+在币信[https://bixin.com/openplatform/](https://bixin.com/openplatform/) 页面中获取你创建的vendor的相关信息，配置下面的参数：
 
 ```
 APP_NAME = 'your-account'
@@ -48,6 +48,7 @@ python manage.py create_bot_menu
 ## 服务号基础功能展示
 
 可以通过币信App扫码，扫码关注下面这个Demo二维码：
+
 ![image](https://raw.githubusercontent.com/haobtc/openplatform/master/images/bot_demo_qrcode.png)
 
-在这里创建了基础的menu和最基础的用户交互。
+在这里创建了基础的menu和用户交互。
