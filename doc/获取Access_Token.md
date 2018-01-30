@@ -11,7 +11,7 @@ Access Token 是第三方和币信Vendor交互的唯一凭证，任何涉及到�
 调用API：
 
 ```
-GET https://bixin.com/platform/token/?vendor=hello&secret=09cbdbb7be8a46dc8949c9818c5e9d6c
+GET https://bixin.im/platform/token/?vendor=hello&secret=09cbdbb7be8a46dc8949c9818c5e9d6c
 ```
 
 返回

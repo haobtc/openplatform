@@ -4,7 +4,7 @@
 ## 获取用户信息
 
 ```
-GET https://bixin.com/platform/api/v1/user/:userid?access_token=30e57a621fa2474c914ac7ca6c85cc18
+GET https://bixin.im/platform/api/v1/user/:userid?access_token=30e57a621fa2474c914ac7ca6c85cc18
 
 ```
 
@@ -26,7 +26,7 @@ GET https://bixin.com/platform/api/v1/user/:userid?access_token=30e57a621fa2474c
 
 
 ```
- GET https://bixin.com/platform/api/v1/user/list?access_token=30e57a621fa2474c914ac7ca6c85cc18
+ GET https://bixin.im/platform/api/v1/user/list?access_token=30e57a621fa2474c914ac7ca6c85cc18
 ```
 
 参数：
@@ -60,7 +60,7 @@ GET https://bixin.com/platform/api/v1/user/:userid?access_token=30e57a621fa2474c
 ## 获取Vendor的地址
 
 ```
-GET https://bixin.com/platform/api/v1/address/list?access_token=30e57a621fa2474c914ac7ca6c85cc18
+GET https://bixin.im/platform/api/v1/address/list?access_token=30e57a621fa2474c914ac7ca6c85cc18
 ```
 
 参数：
@@ -87,7 +87,7 @@ GET https://bixin.com/platform/api/v1/address/list?access_token=30e57a621fa2474c
 ## 对Vendor提现
 
 ```
-POST https://bixin.com/platform/api/v1/withdraw/create
+POST https://bixin.im/platform/api/v1/withdraw/create
 ```
 
 参数：
@@ -125,7 +125,7 @@ POST https://bixin.com/platform/api/v1/withdraw/create
 ## 获取转账列表
 
 ```
-GET https://bixin.com/platform/api/v1/transfer/list?access_token=30e57a621fa2474c914ac7ca6c85cc18
+GET https://bixin.im/platform/api/v1/transfer/list?access_token=30e57a621fa2474c914ac7ca6c85cc18
 ```
 
 查询参数:

@@ -10,7 +10,7 @@ python manage.py migrate
 
 ### Settings
 
-在币信[https://bixin.com/openplatform/](https://bixin.com/openplatform/) 页面中获取你创建的vendor的相关信息，配置下面的参数：
+在币信[https://bixin.im/openplatform/](https://bixin.im/openplatform/) 页面中获取你创建的vendor的相关信息，配置下面的参数：
 
 ```
 APP_NAME = 'your-account'
@@ -42,7 +42,7 @@ python manage.py create_bot_menu
 
 ## 网站展示
 
-用户可以到网站[https://platformapidemo.bixin.com/](https://platformapidemo.bixin.com/),这里提供了登录，转账，提现和JS-SDK的相关功能，可以进行查看
+用户可以到网站[https://platformapidemo.bixin.im/](https://platformapidemo.bixin.im/),这里提供了登录，转账，提现和JS-SDK的相关功能，可以进行查看
 
 
 ## 服务号基础功能展示

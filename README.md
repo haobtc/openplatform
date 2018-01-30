@@ -5,4 +5,4 @@
 ## [币信开放平台doc](https://github.com/haobtc/openplatform/tree/master/doc)
 
 
-## [代码demo](https://github.com/haobtc/openplatform/tree/master/openplatform) && [网站demo](https://platformapidemo.bixin.com/)
+## [代码demo](https://github.com/haobtc/openplatform/tree/master/openplatform) && [网站demo](https://platformapidemo.bixin.im/)

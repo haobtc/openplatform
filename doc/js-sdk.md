@@ -11,7 +11,7 @@ JS-SDK的页面必须先注入配置信息，否则将无法调用(同一个url�
 
 ``` js
 
-<script src="https://bixin.com/static/js/bixin-js.1.0.1.js"></script>
+<script src="https://bixin.im/static/js/bixin-js.1.0.1.js"></script>
 <script>
 bixin.config({
   debug: true,
@@ -19,7 +19,7 @@ bixin.config({
   timestamp: 1499394832, //生成签名的时间戳
   nonce: 'CgQLBgEA', //生成签名的随机串
   signature: 'da39a3ee5e6b4b0d3255bfef95601890afd80709', //签名，方法参见附录
-  callback: 'https://my.app.com/callback', //vendor的callback地址
+  callback: 'https://my.app.im/callback', //vendor的callback地址
   jsApiList: ['openPay'], // 需要调用的api名字列表，如果有不支持的API，则调用bixin.error();
 });
 </script>
@@ -126,7 +126,7 @@ bixin.openConv({
 
 签名过程：
 
-1. 使用vendor的access_token访问[https://bixin.com/platform/api/v1/ticket/jsapi](https://bixin.com/platform/api/v1/ticket/jsapi)获得jssdk_ticket（有效期7200秒）。
+1. 使用vendor的access_token访问[https://bixin.im/platform/api/v1/ticket/jsapi](https://bixin.im/platform/api/v1/ticket/jsapi)获得jssdk_ticket（有效期7200秒）。
 
 2. 将nonce, timestamp, jssdk_ticket, callback_url拼接起来获得签名。拼接时，首先对这四个参数进行字典排序，然后使用url键值对的格式将参数拼接成字符串（key_1=value_1&key_2=value_2...），参数名均为小写。最后使用SHA1对生成的字符串进行加密，即可获得认证所需要的签名。
 
@@ -149,7 +149,7 @@ signature = create_signature(
     nonce='CgQLBgEA',
     timestamp=1499394832,
     jssdk_ticket='c1b9a4461e1c7574e4bd6c2e0d343c81d7e142b5',
-    url='https://my.app.com/callback'
+    url='https://my.app.im/callback'
 )
 ```
 

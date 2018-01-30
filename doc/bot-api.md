@@ -40,7 +40,7 @@ bot = Bot()
 Content-Type: application/x-www-form-urlencoded
 
 ```
-POST https://openapi.bixin.com/api/v2/bot.postText
+POST https://openapi.bixin.im/api/v2/bot.postText
 ```
 
 参数：
@@ -65,10 +65,10 @@ POST https://openapi.bixin.com/api/v2/bot.postText
 		"sender": {
 			"name": "bot_test",
 			"nickname": "Ghost bot",
-			"avatar_url": "https://openapi.bixin.com.com/res/vendor_fin_dollar2.png",
+			"avatar_url": "https://openapi.bixin.im/res/vendor_fin_dollar2.png",
 			"gender": "",
 			"menu": [{
-				"icon_url": "https://openapi.bixin.com.com/res/faq.png",
+				"icon_url": "https://openapi.bixin.im/res/faq.png",
 				"desc": "Test",
 				"action": "bixin://postevent?event=index_view&text=Test&target_id=f2c5609ae91c4a2ab20c4b196aac9b4a&conv_type=bot"
 			}],
@@ -83,7 +83,7 @@ POST https://openapi.bixin.com/api/v2/bot.postText
 		"receiver": {
 			"name": "echo",
 			"nickname": "12555",
-			"avatar_url": "https://openapi.bixin.com.com/upload/2017/05/11/6146c20c214745f3b29b73216fe47fd1.png",
+			"avatar_url": "https://openapi.bixin.im/upload/2017/05/11/6146c20c214745f3b29b73216fe47fd1.png",
 			"gender": "male",
 			"menu": [],
 			"btc_address": "1vkJV6bnJdbjocerXjLJkc3tEsjmEjh94",
@@ -102,7 +102,7 @@ POST https://openapi.bixin.com/api/v2/bot.postText
 Content-Type: multipart/form-data
 
 ```
-POST https://openapi.bixin.com/api/v2/bot.postImage
+POST https://openapi.bixin.im/api/v2/bot.postImage
 ```
 
 参数：
@@ -124,14 +124,14 @@ POST https://openapi.bixin.com/api/v2/bot.postImage
 		"conv_type": "bot",
 		"sender": {
 			"nickname": "Ghost bot",
-			"avatar_url": "https://openapi.bixin.com.com/res/vendor_fin_dollar2.png",
+			"avatar_url": "https://openapi.bixin.im/res/vendor_fin_dollar2.png",
 			"conv_type": "bot",
 			"name": "bot_test",
 			"id": "f2c5609ae91c4a2ab20c4b196aac9b4a",
 			"btc_address": "1Har9AL8QyRuQ5DiLfm6kFndscbVR6ctHG",
 			"gender": "",
 			"menu": [{
-				"icon_url": "https://openapi.bixin.com.com/res/faq.png",
+				"icon_url": "https://openapi.bixin.im/res/faq.png",
 				"desc": "Test",
 				"action": "bixin://postevent?event=index_view&text=Test&target_id=f2c5609ae91c4a2ab20c4b196aac9b4a&conv_type=bot"
 			}],
@@ -140,17 +140,17 @@ POST https://openapi.bixin.com/api/v2/bot.postImage
 		"id": 10560,
 		"request_id": "a1273e67b760a44259dc0ee29087ade722",
 		"content": {
-			"image_url": "https://openapi.bixin.com.com/upload/2017/07/07/a75955a4165e4b5990ea9559ce794f94.png",
+			"image_url": "https://openapi.bixin.im/upload/2017/07/07/a75955a4165e4b5990ea9559ce794f94.png",
 			"image_height": 768,
 			"thumb_height": 112,
-			"thumb_url": "https://openapi.bixin.com.com/upload/2017/07/07/a75955a4165e4b5990ea9559ce794f94.png",
+			"thumb_url": "https://openapi.bixin.im/upload/2017/07/07/a75955a4165e4b5990ea9559ce794f94.png",
 			"thumb_width": 200,
 			"image_width": 1366
 		},
 		"prev_id": 10558,
 		"receiver": {
 			"nickname": "Echo",
-			"avatar_url": "https://openapi.bixin.com.com/upload/2017/07/07/1adf8b1675e84435aa5e3c6a2202a825.png",
+			"avatar_url": "https://openapi.bixin.im/upload/2017/07/07/1adf8b1675e84435aa5e3c6a2202a825.png",
 			"conv_type": "private",
 			"name": "echo",
 			"id": "a573e67b760a44259dc0ee29087ade72",
@@ -170,7 +170,7 @@ POST https://openapi.bixin.com/api/v2/bot.postImage
 Content-Type: application/json
 
 ```
-POST https://openapi.bixin.com.com/api/v2/bot.postSelect
+POST https://openapi.bixin.im/api/v2/bot.postSelect
 ```
 
 参数：
@@ -212,10 +212,10 @@ POST https://openapi.bixin.com.com/api/v2/bot.postSelect
 		"sender": {
 			"name": "bot_test",
 			"nickname": "Ghost bot",
-			"avatar_url": "https://openapi.bixin.com.com/res/vendor_fin_dollar2.png",
+			"avatar_url": "https://openapi.bixin.im/res/vendor_fin_dollar2.png",
 			"gender": "",
 			"menu": [{
-				"icon_url": "https://openapi.bixin.com.com/res/faq.png",
+				"icon_url": "https://openapi.bixin.im/res/faq.png",
 				"desc": "Test",
 				"action": "bixin://postevent?event=index_view&text=Test&target_id=f2c5609ae91c4a2ab20c4b196aac9b4a&conv_type=bot"
 			}],
@@ -230,7 +230,7 @@ POST https://openapi.bixin.com.com/api/v2/bot.postSelect
 		"receiver": {
 			"name": "echo",
 			"nickname": "12555",
-			"avatar_url": "https://openapi.bixin.com.com/upload/2017/05/11/6146c20c214745f3b29b73216fe47fd1.png",
+			"avatar_url": "https://openapi.bixin.im/upload/2017/05/11/6146c20c214745f3b29b73216fe47fd1.png",
 			"gender": "male",
 			"menu": [],
 			"btc_address": "1vkJV6bnJdbjocerXjLJkc3tEsjmEjh94",
@@ -250,7 +250,7 @@ POST https://openapi.bixin.com.com/api/v2/bot.postSelect
 Content-Type: application/x-www-form-urlencoded
 
 ```
-POST https://openapi.bixin.com.com/api/v2/bot.postArticle
+POST https://openapi.bixin.im/api/v2/bot.postArticle
 ```
 
 参数：
@@ -275,18 +275,18 @@ POST https://openapi.bixin.com.com/api/v2/bot.postArticle
 		"content_type": "article",
 		"content": {
 			"desc": "desc描述",
-			"image_url": "https://bixin.com/static/images/logo_scroll@2x.21af7c9605c2.png",
-			"background": "https://bixin.com/static/images/logo_scroll@2x.21af7c9605c2.png",
+			"image_url": "https://bixin.im/static/images/logo_scroll@2x.21af7c9605c2.png",
+			"background": "https://bixin.im/static/images/logo_scroll@2x.21af7c9605c2.png",
 			"title": "title标题",
-			"action": "bixin://webview_auth/?url=https://bixin.com&bot_id=f2c5609ae91c4a2ab20c4b196aac9b4a"
+			"action": "bixin://webview_auth/?url=https://bixin.im&bot_id=f2c5609ae91c4a2ab20c4b196aac9b4a"
 		},
 		"sender": {
 			"name": "bot_test",
 			"nickname": "Ghost bot",
-			"avatar_url": "https://openapi.bixin.com.com/res/vendor_fin_dollar2.png",
+			"avatar_url": "https://openapi.bixin.im/res/vendor_fin_dollar2.png",
 			"gender": "",
 			"menu": [{
-				"icon_url": "https://openapi.bixin.com.com/res/faq.png",
+				"icon_url": "https://openapi.bixin.im/res/faq.png",
 				"desc": "Test",
 				"action": "bixin://postevent?event=index_view&text=Test&target_id=f2c5609ae91c4a2ab20c4b196aac9b4a&conv_type=bot"
 			}],
@@ -301,7 +301,7 @@ POST https://openapi.bixin.com.com/api/v2/bot.postArticle
 		"receiver": {
 			"name": "echo",
 			"nickname": "12555",
-			"avatar_url": "https://openapi.bixin.com.com/upload/2017/05/11/6146c20c214745f3b29b73216fe47fd1.png",
+			"avatar_url": "https://openapi.bixin.im/upload/2017/05/11/6146c20c214745f3b29b73216fe47fd1.png",
 			"gender": "male",
 			"menu": [],
 			"btc_address": "1vkJV6bnJdbjocerXjLJkc3tEsjmEjh94",
@@ -322,7 +322,7 @@ POST https://openapi.bixin.com.com/api/v2/bot.postArticle
 Content-Type: application/x-www-form-urlencoded
 
 ```
-POST https://openapi.bixin.com/api/v2/bot.broadcastText
+POST https://openapi.bixin.im/api/v2/bot.broadcastText
 ```
 
 参数：
@@ -343,7 +343,7 @@ POST https://openapi.bixin.com/api/v2/bot.broadcastText
 Content-Type: multipart/form-data
 
 ```
-POST https://openapi.bixin.com/api/v2/bot.broadcastImage
+POST https://openapi.bixin.im/api/v2/bot.broadcastImage
 ```
 
 参数：
@@ -364,7 +364,7 @@ POST https://openapi.bixin.com/api/v2/bot.broadcastImage
 Content-Type: application/x-www-form-urlencoded
 
 ```
-POST https://openapi.bixin.com.com/api/v2/bot.broadcastArticle
+POST https://openapi.bixin.im/api/v2/bot.broadcastArticle
 ```
 
 参数：
@@ -390,7 +390,7 @@ POST https://openapi.bixin.com.com/api/v2/bot.broadcastArticle
 Content-Type: application/x-www-form-urlencoded
 
 ```
-POST https://openapi.bixin.com/api/v2/bot.broadcastSticky
+POST https://openapi.bixin.im/api/v2/bot.broadcastSticky
 ```
 
 参数：
@@ -413,7 +413,7 @@ POST https://openapi.bixin.com/api/v2/bot.broadcastSticky
 Content-Type: application/json
 
 ```
-POST https://openapi.bixin.com/api/v2/bot.broadcastSelect
+POST https://openapi.bixin.im/api/v2/bot.broadcastSelect
 ```
 
 参数：
@@ -434,7 +434,7 @@ POST https://openapi.bixin.com/api/v2/bot.broadcastSelect
 ### 获取粉丝用户信息
 
 ```
-GET https://openapi.bixin.com/api/v2/bot.getFollowers
+GET https://openapi.bixin.im/api/v2/bot.getFollowers
 ```
 
 返回：
@@ -464,7 +464,7 @@ GET https://openapi.bixin.com/api/v2/bot.getFollowers
 Content-Type: application/x-www-form-urlencoded
 
 ```
-POST https://openapi.bixin.com/api/v2/bot.postPaymentRequest
+POST https://openapi.bixin.im/api/v2/bot.postPaymentRequest
 ```
 
 参数：
@@ -508,7 +508,7 @@ POST https://openapi.bixin.com/api/v2/bot.postPaymentRequest
             "menu": [],
             "conv_type": "bot",
             "name": "bot12345678",
-            "avatar_url": "https://bixin.com/media/openplatform/2017/07/17/pECXyQZz7u8SuvFr.png",
+            "avatar_url": "https://bixin.im/media/openplatform/2017/07/17/pECXyQZz7u8SuvFr.png",
             "btc_address": "1PgwDda8KuhyZJDeypm94WbDhoz4b7GJqi"
         },
         "conv_type": "bot",
@@ -521,7 +521,7 @@ POST https://openapi.bixin.com/api/v2/bot.postPaymentRequest
             "menu": [],
             "conv_type": "private",
             "name": "echo",
-            "avatar_url": "https://bixin.com/upload/2017/07/14/348c0df261ff487698f797d416b4a847.png",
+            "avatar_url": "https://bixin.im/upload/2017/07/14/348c0df261ff487698f797d416b4a847.png",
             "btc_address": "1vkJV6bnJdbjocerXjLJkc3tEsjmEjh94"
         }
     }
@@ -533,7 +533,7 @@ POST https://openapi.bixin.com/api/v2/bot.postPaymentRequest
 Content-Type: application/json
 
 ```
-POST https://openapi.bixin.com/api/v2/bot.postForm
+POST https://openapi.bixin.im/api/v2/bot.postForm
 ```
 
 参数：
@@ -555,7 +555,7 @@ POST https://openapi.bixin.com/api/v2/bot.postForm
         "id": 83100,
         "sender": {
             "id": "f2c5609ae91c4a2ab20c4b196aac9b4a",
-            "avatar_url": "https://openapi.bixin.com/res/vendor_fin_dollar2.png",
+            "avatar_url": "https://openapi.bixin.im/res/vendor_fin_dollar2.png",
             "nickname": "Ghost bot",
             "btc_address": "1Har9AL8QyRuQ5DiLfm6kFndscbVR6ctHG",
             "gender": "",
@@ -567,7 +567,7 @@ POST https://openapi.bixin.com/api/v2/bot.postForm
         "created_at": "2017-08-15T03:46:34.895666",
         "receiver": {
             "id": "a573e67b760a44259dc0ee29087ade72",
-            "avatar_url": "https://openapi.bixin.com/upload/2017/07/14/348c0df261ff487698f797d416b4a847.png",
+            "avatar_url": "https://openapi.bixin.im/upload/2017/07/14/348c0df261ff487698f797d416b4a847.png",
             "nickname": "heid",
             "btc_address": "1vkJV6bnJdbjocerXjLJkc3tEsjmEjh94",
             "gender": "male",
@@ -634,7 +634,7 @@ POST https://openapi.bixin.com/api/v2/bot.postForm
 Content-Type: application/json
 
 ```
-POST https://openapi.bixin.com/api/v2/bot.setMenu
+POST https://openapi.bixin.im/api/v2/bot.setMenu
 ```
 
 参数：
@@ -642,7 +642,7 @@ POST https://openapi.bixin.com/api/v2/bot.setMenu
 | 名称(name) | 描述(description) |
 | --------- | ----------------- |
 | desc | 描述字典（支持多语言: en_US, zh_Hans) |
-| action |  跳转连接或者 event 如: https://bixin.com |
+| action |  跳转连接或者 event 如: https://bixin.im |
 | icon_url |  图标url |
 
 返回：

@@ -28,7 +28,7 @@ class Command(BaseCommand):
             'en_US': 'app website demo',
             'zh_Hans': '应用网站',
         }
-        url = 'https://platformapidemo.bixin.com/'
+        url = 'https://platformapidemo.bixin.im/'
         return webview_item(desc, url)
 
     def get_action_item_data(self):

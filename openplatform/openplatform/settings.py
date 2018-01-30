@@ -134,7 +134,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
 
-DOMAIN_NAME = 'platformdemo.bixin.com'
+DOMAIN_NAME = 'platformdemo.bixin.im'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend']
 
@@ -168,9 +168,9 @@ LOGGING = {
 }
 
 
-PLATFORM_SERVER = 'https://bixin.com'
-QR_LOGIN_URL = 'https://login.bixin.com'
-BIXIN_APP_HOST = 'https://openapi.bixin.com'
+PLATFORM_SERVER = 'https://bixin.im'
+QR_LOGIN_URL = 'https://login.bixin.im'
+BIXIN_APP_HOST = 'https://openapi.bixin.im'
 
 APP_NAME = ''
 VENDOR_SECRET = ''
