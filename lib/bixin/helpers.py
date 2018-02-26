@@ -19,7 +19,6 @@ def format_transfer_protocol(target_addr, currency,
     if target_addr:
         params = {
             'target_addr': target_addr,
-            'currency': currency,
         }
     else:
         params = {
@@ -27,8 +26,10 @@ def format_transfer_protocol(target_addr, currency,
             'conv_type': conv_type,
         }
 
-    if amount:
-        params['amount'] = amount
+    if currency:
+        params['currency'] = currency
+        if amount:
+            params['amount'] = amount
 
     if args:
         params['args'] = json.dumps(args)

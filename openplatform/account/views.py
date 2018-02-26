@@ -53,6 +53,7 @@ def bot_login(request, bot_token):
 
     request.session['expire'] = int(time.time()) + expire
     request.session['site_userid'] = user.id
+    request.session.save()
     site_userid = user.id
 
     return redirect(reverse('account:index'))
