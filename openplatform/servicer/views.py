@@ -35,6 +35,7 @@ def bot_detail(request):
     sign = create_signature(nonce=nonce, timestamp=timestamp,
                             url=url, jssdk_ticket=jssdk_ticket)
 
+    currency = "BTC"
 
     # pay
     deposit_req = Deposit.objects.create(user=user)
@@ -47,7 +48,6 @@ def bot_detail(request):
     category = 'pay for test'
     args={'request_uuid': deposit_req.uuid}
 
-
     #pay demo2
     param2 = {
         'target_id': target_id,
@@ -56,7 +56,7 @@ def bot_detail(request):
         'category': category,
         'args': args,
     }
-    protocol1 = format_transfer_protocol(None, 'BTC', **param2)
+    protocol1 = format_transfer_protocol(None, 'AE', **param2)
 
     #pay demo3
     param3 = {
@@ -64,6 +64,6 @@ def bot_detail(request):
         'category': category,
         'args': args,
     }
-    protocol2 = format_transfer_protocol(address, 'BTC', **param3)
+    protocol2 = format_transfer_protocol(address, 'ETH', **param3)
 
     return render(request, 'detail.html', locals())

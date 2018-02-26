@@ -49,10 +49,11 @@ function choose_contact(){
   });
 }
 
-function pay(address, amount, note, category, args){
+function pay(currency, address, amount, note, category, args){
   bixin.openPay({
-    amount: amount,
+    currency: currency,
     recipientAddr: address,
+    amount: amount,
     note: note,
     category: category,
     args0: args,
@@ -79,10 +80,10 @@ function open_scan(){
   },1000);
 }
 
-function open_pay(address, amount, note, category, args){
+function open_pay(currency, address, amount, note, category, args){
   setConfig();
   setTimeout(_async_cancel=function(){
-    pay(address, amount, note, category, args);
+    pay(currency, address, amount, note, category, args);
   },1000);
 }
 
