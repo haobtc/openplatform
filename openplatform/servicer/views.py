@@ -40,10 +40,10 @@ def bot_detail(request):
     # pay
     deposit_req = Deposit.objects.create(user=user)
     resp = c.get_vendor_address_list(currency='BTC')
-    address = resp.get('items', [])[0]
+    btc_address = resp.get('items', [])[0]
 
     # pay demo1
-    amount = 0.01
+    amount = 0.001
     note = 'test'
     category = 'pay for test'
     args={'request_uuid': deposit_req.uuid}
@@ -52,18 +52,20 @@ def bot_detail(request):
     param2 = {
         'target_id': target_id,
         'conv_type': 'private',
-        'amount': amount,
+        'amount': 1,
         'category': category,
         'args': args,
     }
     protocol1 = format_transfer_protocol(None, 'AE', **param2)
 
     #pay demo3
+    resp = c.get_vendor_address_list(currency='ETH')
+    eth_address = resp.get('items', [])[0]
     param3 = {
-        'amount': amount,
+        'amount': 0.01,
         'category': category,
         'args': args,
     }
-    protocol2 = format_transfer_protocol(address, 'ETH', **param3)
+    protocol2 = format_transfer_protocol(eth_address, 'ETH', **param3)
 
     return render(request, 'detail.html', locals())
