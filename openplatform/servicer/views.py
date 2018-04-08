@@ -37,6 +37,13 @@ def bot_detail(request):
 
     currency = "BTC"
 
+    #转发文章
+    bot_target_id = settings.BOT_TARGET_ID # your bot target id
+    share_url = 'https://bixin.im'
+    share_title = '转发示例'
+    share_desc = '转发示例'
+    share_image_url = 'https://bixin.im/static/images/logo_slim@2x.d27f1d7c026c.png'
+
     # pay
     deposit_req = Deposit.objects.create(user=user)
     resp = c.get_vendor_address_list(currency='BTC')

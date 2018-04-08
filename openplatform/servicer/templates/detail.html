@@ -42,6 +42,11 @@
           </p>
           <p>
             <li>
+              <button id="share_article" class="btn btn-success" onclick="share_article('{{share_url}}', '{{ bot_target_id }}', '{{ share_title }}', '{{ share_desc}}', '{{ share_image_url }}')">转发</button>
+            </li>
+          </p>
+          <p>
+            <li>
               <button id="open_pay" class="btn btn-warning" onclick="open_pay('{{ currency }}', '{{ btc_address }}', {{amount}}, '{{ note }}', '{{ category }}', '{{ args|json2str }}')">打开支付demo1</button>
             </li>
           </p>

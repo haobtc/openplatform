@@ -6,7 +6,7 @@ function setConfig() {
     nonce: nonce, //生成签名的随机串
     signature: sign, //签名，方法参见下条
     callback: callback, //vendor的callback地址
-    jsApiList: ["openPay", "scanQRCode", "chooseContact", "openConv", "previewImage"], // 需要调用的api名字列表，如果有不支持的API，则调用bixin.error();
+    jsApiList: ["openPay", "scanQRCode", "chooseContact", "openConv", "previewImage", "sendMiniArticle"], // 需要调用的api名字列表，如果有不支持的API，则调用bixin.error();
   });
 
   bixin.ready(function(){
@@ -46,6 +46,21 @@ function choose_contact(){
       success: function(res) {
         console.log(res); // user object
       }
+  });
+}
+
+function send_min_article(url, bot_target_id, user_target_id, conv_type, title, desc, image_url){
+  bixin.sendMiniArticle({
+    url: url,
+    bot_id: bot_target_id,
+    target_id: user_target_id,
+    conv_type: conv_type,
+    title: title,
+    desc: desc,
+    image_url: image_url,
+    success: function(res){
+      console.log(res);
+    }
   });
 }
 
@@ -91,5 +106,27 @@ function open_choose_contact(){
   setConfig();
   setTimeout(_async_cancel=function(){
     choose_contact();
+  },1000);
+}
+
+function share_article(url, bot_target_id, title, desc, image_url){
+  setConfig();
+  setTimeout(_async_cancel=function(){
+    bixin.chooseContact({
+      type: "user", // 支持 "user", "group", "bot"
+      success: function(res) {
+        console.log(res); // user object
+
+        var user_target_id = res.targetId;
+        var conv_type = 'private'; //可选为: private, bot, group,
+                                   //需要根据chooseContact的type不同来填写
+
+        function send_min_article(url, bot_target_id, user_target_id, conv_type, title, desc, image_url){
+          setTimeout(_async_cancel=function(){
+            send_min_article(url, bot_target_id, user_target_id, conv_type,
+                             title, desc, image_url);
+          });
+      }
+    });
   },1000);
 }
