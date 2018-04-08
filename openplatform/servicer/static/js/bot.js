@@ -1,3 +1,5 @@
+var ready = false;
+
 function setConfig() {
   bixin.config({
     debug: 'true',
@@ -11,12 +13,15 @@ function setConfig() {
 
   bixin.ready(function(){
     console.log("bixin.ready");
+    ready = true;
   });
-
 }
 
-function chat(target_id, conv_type){
+window.onload = function(){
+  setConfig();
+};
 
+function chat(target_id, conv_type){
   bixin.openConv({
     targetId: target_id,
     convType: conv_type,
@@ -30,7 +35,6 @@ function chat(target_id, conv_type){
 }
 
 function scanQRCode(){
-
   bixin.scanQRCode({
       needResult: false, // 默认为false，扫描结果由币信处理，true则直接返回扫描结果
       //scanType: ["qrCode",], // 只需支持qrcode
@@ -82,35 +86,45 @@ function pay(currency, address, amount, note, category, args){
 }
 
 function open_chat(target_id, conv_type){
-  setConfig()
+  if(!ready){
+    setConfig();
+  }
   setTimeout(_async_cancel=function(){
     chat(target_id, conv_type)
   },1000);
 }
 
 function open_scan(){
-  setConfig();
+  if(!ready){
+    setConfig();
+  }
   setTimeout(_async_cancel=function(){
     scanQRCode();
   },1000);
 }
 
 function open_pay(currency, address, amount, note, category, args){
-  setConfig();
+  if(!ready){
+    setConfig();
+  }
   setTimeout(_async_cancel=function(){
     pay(currency, address, amount, note, category, args);
   },1000);
 }
 
 function open_choose_contact(){
-  setConfig();
+  if(!ready){
+    setConfig();
+  }
   setTimeout(_async_cancel=function(){
     choose_contact();
   },1000);
 }
 
 function share_article(url, bot_target_id, title, desc, image_url){
-  setConfig();
+  if(!ready){
+    setConfig();
+  }
   setTimeout(_async_cancel=function(){
     bixin.chooseContact({
       type: "user", // 支持 "user", "group", "bot"
