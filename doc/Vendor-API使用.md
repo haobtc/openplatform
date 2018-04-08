@@ -122,6 +122,28 @@ POST https://bixin.im/platform/api/v1/withdraw/create
 }
 ```
 
+## 获取某笔转账信息
+```
+GET https://bixin.im/platform/api/v1/transfer/145654?access_token=30e57a621fa2474c914ac7ca6c85cc18
+```
+
+返回：
+```
+{
+    "status": "SUCCESS",
+    "vendor": "hello",
+    "args": { },
+    "currency": "BTC",
+    "user.id": 1,
+    "id": 13,
+    "category": "",
+    "client_uuid": "12e57a621fa2474c914ac7ca6c85cc18",
+    "note": "",
+    "amount": "-1",
+    "reply_transfer_id": 0
+}
+```
+
 ## 获取转账列表
 
 ```
