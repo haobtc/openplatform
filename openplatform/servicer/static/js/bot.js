@@ -121,11 +121,8 @@ function share_article(url, bot_target_id, title, desc, image_url){
         var conv_type = 'private'; //可选为: private, bot, group,
                                    //需要根据chooseContact的type不同来填写
 
-        function send_min_article(url, bot_target_id, user_target_id, conv_type, title, desc, image_url){
-          setTimeout(_async_cancel=function(){
-            send_min_article(url, bot_target_id, user_target_id, conv_type,
-                             title, desc, image_url);
-          });
+        send_min_article(url, bot_target_id, user_target_id, conv_type,
+                         title, desc, image_url);
       }
     });
   },1000);
