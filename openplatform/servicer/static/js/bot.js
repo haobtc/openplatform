@@ -1,5 +1,4 @@
 var ready = false;
-
 function setConfig() {
   bixin.config({
     debug: 'true',
@@ -16,10 +15,6 @@ function setConfig() {
     ready = true;
   });
 }
-
-window.onload = function(){
-  setConfig();
-};
 
 function chat(target_id, conv_type){
   bixin.openConv({
