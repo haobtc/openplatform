@@ -26,7 +26,6 @@ public class AES {
   static  final String algorithmStr = "AES/CBC/PKCS7Padding";
   private static Key key;
   private static Cipher cipher;
-  private static byte[] iv = new byte[blockSize];
 
   public static void init(String aesKey) {
 
@@ -55,6 +54,7 @@ public class AES {
 
     init(vendorKey);
 
+    byte[] iv = new byte[blockSize];
     SecureRandom randomSecureRandom = SecureRandom.getInstance("SHA1PRNG");
     randomSecureRandom.nextBytes(iv);
     IvParameterSpec ivParams = new IvParameterSpec(iv);
