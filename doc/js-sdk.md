@@ -98,9 +98,9 @@ bixin.scanQRCode({
 
 ```
 bixin.chooseContact({
-    type: "user",   // 支持 "user", "group", "bot"
-    success: function(res) {
-        console.log(res); // user object
+    success: function(contact) {
+      var target_id = contact.targetId
+      var conv_type = contact.conv_type
     }
 });
 ```

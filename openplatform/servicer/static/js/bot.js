@@ -122,13 +122,10 @@ function share_article(url, bot_target_id, title, desc, image_url){
   }
   setTimeout(_async_cancel=function(){
     bixin.chooseContact({
-      type: "user", // 支持 "user", "group", "bot"
-      success: function(res) {
-        console.log(res); // user object
+      success: function(contact) {
 
-        var user_target_id = res.targetId;
-        var conv_type = 'private'; //可选为: private, bot, group,
-                                   //需要根据chooseContact的type不同来填写
+        var target_id = contact.targetId;
+        var conv_type = contact.convType; //可选为: private, bot, group,
 
         send_min_article(url, bot_target_id, user_target_id, conv_type,
                          title, desc, image_url);
