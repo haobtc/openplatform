@@ -101,6 +101,7 @@ bixin.chooseContact({
     success: function(contact) {
       var target_id = contact.targetId
       var conv_type = contact.conv_type
+      // 其他信息还包括: name, title, avatarUrl
     }
 });
 ```

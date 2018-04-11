@@ -127,7 +127,7 @@ function share_article(url, bot_target_id, title, desc, image_url){
         var target_id = contact.targetId;
         var conv_type = contact.convType; //可选为: private, bot, group,
 
-        send_min_article(url, bot_target_id, user_target_id, conv_type,
+        send_min_article(url, bot_target_id, target_id, conv_type,
                          title, desc, image_url);
       }
     });
