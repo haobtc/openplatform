@@ -11,9 +11,9 @@
 对地址转账:
 
 ```
-bixin://currency_transfer/?target_addr={}&amount={}&currency={}&category={}&args={}
+bixin://currency_transfer/?target_addr={}&amount={}&currency={}&category={}&message={}&order_id={}&transfer_type={}
 ```
-amount，category，args均为optional
+amount，category，order_id, transfer_type均为optional
 
 例如：
 
@@ -21,16 +21,22 @@ amount，category，args均为optional
 bixin://currency_transfer/?target_addr=16kUc5B48qnASbxeZTisCqTNx6G3DPXuKn&amount=1&currency=BTC&category=test
 
 ```
+
+此外还可以增加额外的自定义参数(可选)。自定义参数不超过10个。 自定义参数格式必须是以"x-"开头，比如
+
+```
+bixin://currency_transfer/?target_addr=16kUc5B48qnASbxeZTisCqTNx6G3DPXuKn&amount=1&currency=BTC&x-name=your-name&x-title=your-title
+```
 对币信平台内部地址转账，会走0手续费实时到账的方式，对于外部地址，币信会走链上的转账(建议转账都币信内部转账)。
 
 对Target_Id 转账:
 
 ```
-bixin://currency_transfer/?target_id={}&conv_type={}&amount=1&currency={}&category={}&args={}
+bixin://currency_transfer/?target_id={}&conv_type={}&amount=1&currency={}&category={}&order_id={}&transfer_type={}
 ```
 conv_type的选项为：private(对个人转账)，bot(对bot转账)。
 
-amount，category，args均为optional
+amount，category，order_id, transfer_type均为optional
 
 例如：
 
@@ -44,14 +50,17 @@ bixin://currency_transfer/?target_id=b620ea4e87b0e5d3f12dd15c97a&conv_type=priva
 ### 2. JS-SDK
 
 ```
-function pay(address, amount, note, category, args){
+function pay(address, amount, note, category, order_id, transfer_type, your_args){
   bixin.openPay({
     amount: amount,
     recipientAddr: address,
     note: note,
     category: category,
-    args0: args,
     message: 'hello pay demo',
+    order_id: '123323',
+    transfer_type: 'spend',
+    // your args, for example
+    // 'x-name': 'your name',
     success: function(res) {
       console.log('pay success');
     },

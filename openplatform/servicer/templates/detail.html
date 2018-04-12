@@ -48,6 +48,11 @@
               <button id="open_pay" class="btn btn-warning" onclick="open_pay('{{ currency }}', '{{ btc_address }}', {{amount}}, '{{ note }}', '{{ category }}', '{{ args|json2str }}')">打开支付demo1</button>
             </li>
           </p>
+          <p>
+            <li>
+              <button id="open_pay" class="btn btn-warning" onclick="open_pay_with_order('{{ currency }}', '{{ btc_address }}', {{amount}}, '{{ note }}', '{{ category }}', '{{ args|json2str }}', '{{ order_id }}', '{{ transfer_type }}')">打开支付demo2(携带商户自定义订单号)</button>
+            </li>
+          </p>
         </div>
       </div>
     </div>
@@ -55,14 +60,20 @@
       <h5> 调用scheme(支持原生和普通网页唤起币信App支付) </h5>
       <p>
         <li>
-          <a href="{{ protocol1 }}" class="btn btn-primary">给Vendor / Bot支付demo2</a>  使用target_id
+          <a href="{{ protocol1 }}" class="btn btn-primary">给Vendor / Bot支付demo3</a>  使用target_id
         </li>
       </p>
       <p>
         <li>
-          <a href="{{ protocol2 }}" class="btn btn-primary">给Vendor / Bot支付demo3</a> 使用address
+          <a href="{{ protocol2 }}" class="btn btn-primary">给Vendor / Bot支付demo4</a> 使用address
         </li>
       </p>
+      <p>
+        <li>
+          <a href="{{ protocol3 }}" class="btn btn-primary">给Vendor / Bot支付demo5</a> 携带商户自定义订单号
+        </li>
+      </p>
+
     </div>
   </div>
 

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import re
 import hashlib
 import json
 import logging
@@ -14,8 +15,9 @@ from django.http import JsonResponse
 
 def format_transfer_protocol(target_addr, currency,
                              target_id=None, conv_type="private",
-                             amount=None, args=None,
-                             category=None):
+                             amount=None, category=None,
+                             order_id=None, transfer_type=None,
+                             **kw):
     if target_addr:
         params = {
             'target_addr': target_addr,
@@ -31,11 +33,20 @@ def format_transfer_protocol(target_addr, currency,
         if amount:
             params['amount'] = amount
 
-    if args:
-        params['args'] = json.dumps(args)
-
     if category:
         params['category'] = category
+
+    if order_id:
+        params['order_id'] = order_id
+
+    if transfer_type:
+        params['transfer_type'] = transfer_type
+
+    if kw:
+        # 用户定义参数
+        for k, w in kw.iteritems():
+            if re.match('^x-', k):
+                params.update({k: w})
 
     protocal = 'bixin://currency_transfer/?%s' % (urlencode(params))
 

@@ -60,16 +60,12 @@ bixin.openPay({
       recipientAddr: '15Rxxxxx',
       note: 'pay to friend'，
       category: data.category,
-      arg0: data.arg0,
-      arg1: data.arg1,
-      arg2: data.arg2,
-      arg3: data.arg3,
-      arg4: data.arg4,
-      arg5: data.arg5,
-      arg6: data.arg6,
-      arg7: data.arg7,
-      arg8: data.arg8,
-      arg9: data.arg9,
+      order_id: data.order_id,
+      transfer_type: data.transfer_type,
+      //商户可自定义参数，我们后端会做保存
+      // 可自定义多个参数，参数个数不超过10个
+      //自定义参数的格式是以"x-"开头，比如
+      // 'x-name': 'your-name'
       success: function(res) {
       },
       error: function(err) {

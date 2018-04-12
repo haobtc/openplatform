@@ -2,6 +2,7 @@
 
 import logging
 from urllib import urlencode
+import uuid
 
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
@@ -51,28 +52,35 @@ def bot_detail(request):
 
     # pay demo1
     amount = 0.001
-    note = 'test'
     category = 'pay for test'
-    args={'request_uuid': deposit_req.uuid}
 
     #pay demo2
+    order_id = uuid.uuid4().hex # 订单号，用户可自定义，最大长度是64
+    transfer_type = 'spend'
+
+    # pay demo3
     param2 = {
         'target_id': target_id,
         'conv_type': 'private',
         'amount': 1,
         'category': category,
-        'args': args,
     }
     protocol1 = format_transfer_protocol(None, 'AE', **param2)
 
-    #pay demo3
+    #pay demo4
     resp = c.get_vendor_address_list(currency='ETH')
     eth_address = resp.get('items', [])[0]
     param3 = {
         'amount': 0.01,
         'category': category,
-        'args': args,
+        'order_id': order_id,
+        'transfer_type': transfer_type,
+        'x-name': 'test',
     }
+    protocol2 = format_transfer_protocol(eth_address, 'ETH', **param3)
+
+    #pay demo5
+    # 如果order id 重复，所以转账后会提现付款已完成
     protocol2 = format_transfer_protocol(eth_address, 'ETH', **param3)
 
     return render(request, 'detail.html', locals())
