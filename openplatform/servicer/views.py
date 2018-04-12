@@ -23,10 +23,10 @@ def bot_callback(request):
     return bot.process_main(request.body)
 
 @login_required
-def bot_detail(request):
+def jssdk_detail(request):
     vendor_name = settings.APP_NAME
     user = request.bx_user
-    target_id = user.target_id
+    user_target_id = user.target_id
 
     c = Client()
     jssdk_ticket = c.get_jsapi_ticket()['ticket']
@@ -50,6 +50,17 @@ def bot_detail(request):
     resp = c.get_vendor_address_list(currency='BTC')
     btc_address = resp.get('items', [])[0]
 
+
+    return render(request, 'jssdk_detail.html', locals())
+
+@login_required
+def scheme_detail(request):
+    vendor_name = settings.APP_NAME
+    user = request.bx_user
+    user_target_id = user.target_id
+
+    currency = "BTC"
+
     # pay demo1
     amount = 0.001
     category = 'pay for test'
@@ -60,7 +71,7 @@ def bot_detail(request):
 
     # pay demo3
     param2 = {
-        'target_id': target_id,
+        'target_id': user_target_id,
         'conv_type': 'private',
         'amount': 1,
         'category': category,
@@ -83,4 +94,3 @@ def bot_detail(request):
     # 如果order id 重复，所以转账后会提现付款已完成
     protocol3 = format_transfer_protocol(eth_address, 'ETH', **param3)
 
-    return render(request, 'detail.html', locals())

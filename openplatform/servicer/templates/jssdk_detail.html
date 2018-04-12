@@ -35,7 +35,17 @@
           </p>
           <p>
             <li>
-              <button id="open_chat" class="btn btn-success" onclick="open_chat('{{ target_id }}', 'private')">打开聊天</button>
+              <button id="open_chat" class="btn btn-success" onclick="open_chat('{{ user_target_id }}', 'private', '', '朋友你好，朋友再见')">打开聊天</button>打开target_id对应的user对话
+            </li>
+          </p>
+          <p>
+            <li>
+              <button id="open_chat" class="btn btn-success" onclick="open_chat('{{ bot_target_id }}', 'group', '', '朋友你好，朋友再见')">打开聊天(发送消息给服务号)</button>
+            </li>
+          </p>
+          <p>
+            <li>
+              <button id="open_chat" class="btn btn-success" onclick="open_chat('{{ bot_target_id }}', 'group', 'action_demo', '测试事件触发')">打开聊天(发送事件给服务号)</button>
             </li>
           </p>
           <p>
@@ -55,25 +65,6 @@
           </p>
         </div>
       </div>
-    </div>
-    <div>
-      <h5> 调用scheme(支持原生和普通网页唤起币信App支付) </h5>
-      <p>
-        <li>
-          <a href="{{ protocol1 }}" class="btn btn-primary">给Vendor / Bot支付demo3</a>  使用target_id
-        </li>
-      </p>
-      <p>
-        <li>
-          <a href="{{ protocol2 }}" class="btn btn-primary">给Vendor / Bot支付demo4</a> 使用address
-        </li>
-      </p>
-      <p>
-        <li>
-          <a href="{{ protocol3 }}" class="btn btn-primary">给Vendor / Bot支付demo5</a> 携带商户自定义订单号
-        </li>
-      </p>
-
     </div>
   </div>
 

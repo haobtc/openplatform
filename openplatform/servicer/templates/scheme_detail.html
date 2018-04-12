@@ -1,0 +1,60 @@
+{% load staticfiles bxtags %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"/>
+</head>
+</html>
+
+<body>
+  <div class="container">
+    <div>
+      <p>
+        <h3> scheme 协议demo </h3>
+      </p>
+    </div>
+    <div>
+      <h5>币信App支付</h5>
+      <p>
+        <li>
+          <a href="{{ protocol1 }}" class="btn btn-primary">给Vendor / Bot支付demo3</a>  使用target_id
+        </li>
+      </p>
+      <p>
+        <li>
+          <a href="{{ protocol2 }}" class="btn btn-primary">给Vendor / Bot支付demo4</a> 使用address
+        </li>
+      </p>
+      <p>
+        <li>
+          <a href="{{ protocol3 }}" class="btn btn-primary">给Vendor / Bot支付demo5</a> 携带商户自定义订单号
+        </li>
+      </p>
+    </div>
+    <div>
+      <h5>币信App支付</h5>
+      <p>
+        <li>
+          <a href="{{ protocol1 }}" class="btn btn-primary">给Vendor / Bot支付demo3</a>  使用target_id
+        </li>
+      </p>
+      <p>
+        <li>
+          <a href="{{ protocol2 }}" class="btn btn-primary">给Vendor / Bot支付demo4</a> 使用address
+        </li>
+      </p>
+      <p>
+        <li>
+          <a href="{{ protocol3 }}" class="btn btn-primary">给Vendor / Bot支付demo5</a> 携带商户自定义订单号
+        </li>
+      </p>
+    </div>
+  </div>
+
+  <script>
+  </script>
+</body>
