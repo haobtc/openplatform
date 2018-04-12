@@ -81,6 +81,6 @@ def bot_detail(request):
 
     #pay demo5
     # 如果order id 重复，所以转账后会提现付款已完成
-    protocol2 = format_transfer_protocol(eth_address, 'ETH', **param3)
+    protocol3 = format_transfer_protocol(eth_address, 'ETH', **param3)
 
     return render(request, 'detail.html', locals())

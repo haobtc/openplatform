@@ -64,6 +64,10 @@ function send_min_article(url, bot_target_id, user_target_id, conv_type, title, 
 }
 
 function pay(currency, address, amount, category, message){
+  if(!ready){
+    setConfig();
+  }
+
   bixin.openPay({
     currency: currency,
     recipientAddr: address,
@@ -79,6 +83,10 @@ function pay(currency, address, amount, category, message){
 }
 
 function open_pay_with_order(currency, address, amount, category, message, order_id, transfer_type){
+  if(!ready){
+    setConfig();
+  }
+
   bixin.openPay({
     currency: currency,
     recipientAddr: address,
@@ -86,7 +94,7 @@ function open_pay_with_order(currency, address, amount, category, message, order
     category: category,
     message: message,
     order_id: order_id,
-    transfer_type: transfer_type
+    transfer_type: transfer_type,
     success: function(res) {
       console.log('pay success');
     },
