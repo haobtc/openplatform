@@ -44,6 +44,7 @@ amount，category，order_id, transfer_type均为optional
 bixin://currency_transfer/?target_id=b620ea4e87b0e5d3f12dd15c97a&conv_type=private&amount=1&currency=BTC&category=test
 ```
 
+也可以自定义参数，规则同上。
 
 可参考[demo](../openplatform/servicer/views.py)
 

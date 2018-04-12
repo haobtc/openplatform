@@ -63,22 +63,39 @@ function send_min_article(url, bot_target_id, user_target_id, conv_type, title, 
   });
 }
 
-function pay(currency, address, amount, note, category, args){
+function pay(currency, address, amount, category, message){
   bixin.openPay({
     currency: currency,
     recipientAddr: address,
     amount: amount,
-    note: note,
     category: category,
-    args0: args,
-    message: 'hello pay demo',
-  success: function(res) {
-    console.log('pay success');
-  },
-  error: function(err) {
-  }
-});
+    message: message,
+    success: function(res) {
+      console.log('pay success');
+    },
+    error: function(err) {
+    }
+  });
 }
+
+function open_pay_with_order(currency, address, amount, category, message, order_id, transfer_type){
+  bixin.openPay({
+    currency: currency,
+    recipientAddr: address,
+    amount: amount,
+    category: category,
+    message: message,
+    order_id: order_id,
+    transfer_type: transfer_type
+    success: function(res) {
+      console.log('pay success');
+    },
+    error: function(err) {
+    }
+  });
+}
+
+
 
 function open_chat(target_id, conv_type){
   if(!ready){

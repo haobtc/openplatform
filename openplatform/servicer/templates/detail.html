@@ -45,12 +45,12 @@
           </p>
           <p>
             <li>
-              <button id="open_pay" class="btn btn-warning" onclick="open_pay('{{ currency }}', '{{ btc_address }}', {{amount}}, '{{ note }}', '{{ category }}', '{{ args|json2str }}')">打开支付demo1</button>
+              <button id="open_pay" class="btn btn-warning" onclick="open_pay('{{ currency }}', '{{ btc_address }}', {{amount}}, '{{ category }}', 'hello pay demo')">打开支付demo1</button>
             </li>
           </p>
           <p>
             <li>
-              <button id="open_pay" class="btn btn-warning" onclick="open_pay_with_order('{{ currency }}', '{{ btc_address }}', {{amount}}, '{{ note }}', '{{ category }}', '{{ args|json2str }}', '{{ order_id }}', '{{ transfer_type }}')">打开支付demo2(携带商户自定义订单号)</button>
+              <button id="open_pay" class="btn btn-warning" onclick="open_pay_with_order('{{ currency }}', '{{ btc_address }}', {{amount}}, '{{ category }}', 'hello pay demo', '{{ order_id }}', '{{ transfer_type }}')">打开支付demo2(携带商户自定义订单号)</button>
             </li>
           </p>
         </div>

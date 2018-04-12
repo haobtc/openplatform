@@ -61,6 +61,7 @@ bixin.openPay({
       note: 'pay to friend'，
       category: data.category,
       order_id: data.order_id,
+      message: data.message,
       transfer_type: data.transfer_type,
       //商户可自定义参数，我们后端会做保存
       // 可自定义多个参数，参数个数不超过10个
@@ -75,8 +76,6 @@ bixin.openPay({
 });
 ```
 recipientAddr 是收款方的地址。
-
-args0 ... args9 是转账信息备注
 
 ### 调用币信扫码
 
