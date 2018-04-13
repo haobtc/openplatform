@@ -102,10 +102,31 @@ bixin.chooseContact({
 ```
 ### 打开对话框
 
+#### 打开并发送文本(文本为空时则不发送自定义内容)
+
 ```
 bixin.openConv({
     targetId: target_id,
     convType: conv_type,
+    text: text
+    success: function(res){
+    },
+    cancel: function(res){
+    },
+    fail: function(res) {
+    }
+});
+
+```
+
+#### 打开并发送事件(发送事件时，必须携带文本)
+
+```
+bixin.openConv({
+    targetId: target_id,
+    convType: conv_type,
+    event: event,
+    text: text,
     success: function(res){
     },
     cancel: function(res){
