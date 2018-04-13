@@ -63,6 +63,12 @@
               <button id="open_pay" class="btn btn-warning" onclick="open_pay_with_order('{{ currency }}', '{{ btc_address }}', {{amount}}, '{{ category }}', 'hello pay demo', '{{ order_id }}', '{{ transfer_type }}')">打开支付demo2(携带商户自定义订单号)</button>
             </li>
           </p>
+          <p>
+            <li>
+              <button id="open_pay" class="btn btn-warning" onclick="open_pay_with_order_args('{{ currency }}', '{{ btc_address }}', {{amount}}, '{{ category }}', 'hello pay demo', '{{ order_id }}', '{{ transfer_type }}', 'your-agrs')">打开支付demo2(携带商户自定义订单号和自定义参数)</button>
+            </li>
+          </p>
+
         </div>
       </div>
     </div>

@@ -52,6 +52,23 @@ def format_transfer_protocol(target_addr, currency,
 
     return protocal
 
+def format_conversation_protocol(target_id, conv_type, text='', event=None):
+    params = {
+        'target_id': target_id,
+        'conv_type': conv_type
+    }
+
+    if text:
+        params.update({'text': text})
+
+    if event and text:
+        params.update({
+            'event': event
+        })
+
+    protocol = 'bixin://conversation/?%s' % (urlencode(params))
+    return protocol
+
 def ok_json(**kw):
     kw['ok'] = True
     return JsonResponse(kw)

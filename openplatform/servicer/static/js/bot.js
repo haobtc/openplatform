@@ -38,25 +38,6 @@ function send_min_article(url, bot_target_id, user_target_id, conv_type, title, 
   });
 }
 
-function open_pay_with_order(currency, address, amount, category, message, order_id, transfer_type){
-  env_exec(function(){
-    bixin.openPay({
-      currency: currency,
-      recipientAddr: address,
-      amount: amount,
-      category: category,
-      message: message,
-      order_id: order_id,
-      transfer_type: transfer_type,
-      success: function(res) {
-        console.log('pay success');
-      },
-      error: function(err) {
-      }
-    });
-  })
-}
-
 function open_chat(target_id, conv_type, event, text){
   env_exec(function(){
     if(event && text){
@@ -86,7 +67,6 @@ function open_chat(target_id, conv_type, event, text){
       });
     }
   })
-
 }
 
 function open_scan(){
@@ -101,7 +81,7 @@ function open_scan(){
   })
 }
 
-function open_pay(currency, address, amount, note, category, args){
+function open_pay(currency, address, amount, note, category, message){
   env_exec(function(){
     bixin.openPay({
       currency: currency,
@@ -109,6 +89,45 @@ function open_pay(currency, address, amount, note, category, args){
       amount: amount,
       category: category,
       message: message,
+      success: function(res) {
+        console.log('pay success');
+      },
+      error: function(err) {
+      }
+    });
+  })
+}
+
+function open_pay_with_order(currency, address, amount, category, message, order_id, transfer_type){
+  env_exec(function(){
+    bixin.openPay({
+      currency: currency,
+      recipientAddr: address,
+      amount: amount,
+      category: category,
+      message: message,
+      order_id: order_id,
+      transfer_type: transfer_type,
+      success: function(res) {
+        console.log('pay success');
+      },
+      error: function(err) {
+      }
+    });
+  })
+}
+
+function open_pay_with_order_args(currency, address, amount, category, message, order_id, transfer_type, your_args){
+  env_exec(function(){
+    bixin.openPay({
+      currency: currency,
+      recipientAddr: address,
+      amount: amount,
+      category: category,
+      message: message,
+      order_id: order_id,
+      transfer_type: transfer_type,
+      'x-name': your_args,
       success: function(res) {
         console.log('pay success');
       },
