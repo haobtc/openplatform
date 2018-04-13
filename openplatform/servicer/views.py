@@ -66,8 +66,10 @@ def scheme_detail(request):
     vendor_name = settings.APP_NAME
     user = request.bx_user
     user_target_id = user.target_id
+    bot_target_id = settings.BOT_TARGET_ID # your bot target id
 
     currency = "BTC"
+    category = 'pay for test'
 
     # pay demo1
     amount = 0.001
@@ -83,6 +85,7 @@ def scheme_detail(request):
     protocol1 = format_transfer_protocol(None, 'AE', **param1)
 
     #pay demo2
+    c = Client()
     resp = c.get_vendor_address_list(currency='ETH')
     eth_address = resp.get('items', [])[0]
     param2 = {
