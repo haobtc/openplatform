@@ -137,41 +137,40 @@ bixin.openConv({
 
 ```
 
-## 附录
-
-### 签名
-
-签名过程：
-
-1. 使用vendor的access_token访问[https://bixin.im/platform/api/v1/ticket/jsapi](https://bixin.im/platform/api/v1/ticket/jsapi)获得jssdk_ticket（有效期7200秒）。
-
-2. 将nonce, timestamp, jssdk_ticket, callback_url拼接起来获得签名。拼接时，首先对这四个参数进行字典排序，然后使用url键值对的格式将参数拼接成字符串（key_1=value_1&key_2=value_2...），参数名均为小写。最后使用SHA1对生成的字符串进行加密，即可获得认证所需要的签名。
-
-签名代码示例：
+#### 转发消息内容给某个联系人或群组
 
 ```
-import hashlib
-import urllib
-
-def create_signature(**kw):
-    params = sorted(kw.items())
-    url_encode = urllib.urlencode(params)
-
-    h = hashlib.sha1()
-    h.update(url_encode)
-    sig = h.hexdigest()
-    return sig
-
-signature = create_signature(
-    nonce='CgQLBgEA',
-    timestamp=1499394832,
-    jssdk_ticket='c1b9a4461e1c7574e4bd6c2e0d343c81d7e142b5',
-    url='https://my.app.im/callback'
-)
+bixin.sendMiniArticle({
+    url: url, // 用户点击可访问的url
+    bot_id: bot_target_id, // 商户自己的bot target id
+    target_id: user_target_id, // 接受者的target id
+    conv_type: conv_type, // 支持两种类型：private, group
+    title: title,
+    desc: desc,
+    image_url: image_url,
+    success: function(res){
+      console.log(res);
+    }
+});
 ```
+如果让用户选择联系人之后再对选择的人或者群组转发可使用chooseContact在调用sendMiniArticle
 
-获取签名后便可配置JS-SDK的config，进而调用JS-SDK。
+```
+function share_article(url, bot_target_id, title, desc, image_url){
+  env_exec(function(){
+    bixin.chooseContact({
+      success: function(contact) {
 
+        var target_id = contact.targetId;
+        var conv_type = contact.convType; //可选为: private, bot, group,
+
+        send_min_article(url, bot_target_id, target_id, conv_type,
+                         title, desc, image_url);
+      }
+    });
+  })
+}
+```
 ### 代码demo
 
-[参考](../openplatform/servicer/static/js)
+[参考](https://github.com/haobtc/openplatform/blob/master/openplatform/servicer/static/js/bot.js)
