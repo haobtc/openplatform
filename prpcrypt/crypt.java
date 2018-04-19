@@ -23,7 +23,7 @@ public class AES {
   private static final int blockSize = 16;
   static  final String KEY_ALGORITHM = "AES";
   // 加解密算法/模式/填充方式
-  static  final String algorithmStr = "AES/CBC/PKCS7Padding";
+  static  final String algorithmStr = "AES/CBC/NOPADDING";
   private static Key key;
   private static Cipher cipher;
 
