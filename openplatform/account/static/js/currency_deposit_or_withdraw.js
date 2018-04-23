@@ -23,9 +23,7 @@ function getQueryString(full_url, field){
 
 function check_qr_code(data){
   var data = decodeURIComponent(data)
-  var args = getQueryString(data, 'args').replace(/\+/, '');
-  var json_args = JSON.parse(args);
-  var deposit_id = json_args['deposit_id']
+  var deposit_id = getQueryString(data, 'order_id');
 
   $.ajax({
     url: '/assets/deposit_process/?deposit_id=' + deposit_id,

@@ -14,7 +14,7 @@ def sync_transfer_to_deposit():
     logging.info('get transfer %s', resp)
     for transfer in resp['items']:
         user = c.get_user(transfer['user.id'], cache=True)
-        deposit_id = transfer['args'].get('deposit_id')
+        deposit_id = transfer['args'].get('order_id')
         amount=decimal.Decimal(transfer['amount'])
 
         if not deposit_id:

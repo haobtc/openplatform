@@ -31,8 +31,9 @@ def request_deposit(request):
     transfer_protocal = format_transfer_protocol(
         target_addr=vendor_address,
         currency=currency,
-        category='deposit',
         args={'deposit_id': deposit.id}
+        order_id=str(deposit.id),
+        transfer_type='deposit'
     )
 
     return ok_json(result=transfer_protocal)
