@@ -29,13 +29,6 @@ bixin://currency_transfer/?target_addr=16kUc5B48qnASbxeZTisCqTNx6G3DPXuKn&amount
 ```
 对币信平台内部地址转账，会走0手续费实时到账的方式，对于外部地址，币信会走链上的转账(建议转账都币信内部转账)。
 
-对Target_Id 转账:
-
-```
-bixin://currency_transfer/?target_id={}&conv_type={}&amount=1&currency={}&category={}&order_id={}&transfer_type={}
-```
-conv_type的选项为：private(对个人转账)，bot(对bot转账)。
-
 amount，category，order_id, transfer_type均为optional
 
 例如：
