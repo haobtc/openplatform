@@ -11,7 +11,7 @@ function env_exec(func) {
     vendorName: vendor_name, //vendor的名字，全网唯一
     timestamp: timestamp, //生成签名的时间戳
     nonce: nonce, //生成签名的随机串
-    signature: sign, //签名，方法参见下条
+    signature: sign, //签名
     callback: callback, //vendor的callback地址
     jsApiList: ["openPay", "scanQRCode", "chooseContact", "openConv", "previewImage", "sendMiniArticle"], // 需要调用的api名字列表，如果有不支持的API，则调用bixin.error();
   });

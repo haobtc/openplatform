@@ -18,7 +18,7 @@ bixin.config({
   vendorName: 'my_first_bixin_app', //vendor的名字，全网唯一
   timestamp: 1499394832, //生成签名的时间戳
   nonce: 'CgQLBgEA', //生成签名的随机串
-  signature: 'da39a3ee5e6b4b0d3255bfef95601890afd80709', //签名，方法参见附录
+  signature: 'da39a3ee5e6b4b0d3255bfef95601890afd80709', //签名
   callback: 'https://my.app.im/callback', //vendor的callback地址
   jsApiList: ['openPay'], // 需要调用的api名字列表，如果有不支持的API，则调用bixin.error();
 });
@@ -28,7 +28,7 @@ bixin.config({
 
 币信支持调用的jsApiList分别为: openPay(打开支付),scanQRCode(调用扫码),chooseContact(打开联系列表),openConv(打开聊天对话框),previewImage(预览图片)。
 
-关于签名生成的逻辑和代码详见本页面的附录
+关于签名生成的逻辑和代码[详见](./sign.md)
 
 ### config 验证结果
 
