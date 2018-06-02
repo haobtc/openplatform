@@ -1,6 +1,7 @@
-### 签名
+## 签名
 
-签名过程：
+### 签名过程：
+
 
 1. 使用vendor的access_token访问[https://bixin.im/platform/api/v1/ticket/jsapi](https://bixin.im/platform/api/v1/ticket/jsapi)获得jssdk_ticket（有效期7200秒）。
 
@@ -8,7 +9,9 @@
 
 签名代码示例
 
-'''
+
+```
+
 import hashlib
 import urllib
 
@@ -28,8 +31,10 @@ signature = create_signature(
     url='https://my.app.im/callback'
 )
 
- ```
+```
+ 
 
 ### 代码demo
+
 
 [参考](https://github.com/haobtc/openplatform/blob/master/openplatform/servicer/views.py#L34-L41)
