@@ -11,7 +11,7 @@ JS-SDK的页面必须先注入配置信息，否则将无法调用(同一个url�
 
 ``` js
 
-<script src="https://bixin.im/static/js/bixin-js.1.0.1.js"></script>
+<script src="https://github.com/haobtc/openplatform/blob/master/lib/bixin/static/js/bixin_jssdk.js"></script>
 <script>
 bixin.config({
   debug: true,
