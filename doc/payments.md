@@ -6,9 +6,9 @@
 
 ## 币信支付协议
 
-### 1. 支付Schema:
+### 1. C2C支付Schema:
 
-对地址转账:
+用户对用户地址转账:
 
 ```
 bixin://currency_transfer/?target_addr={}&amount={}&currency={}&category={}&message={}&order_id={}&transfer_type={}
@@ -41,7 +41,26 @@ bixin://currency_transfer/?target_id=b620ea4e87b0e5d3f12dd15c97a&conv_type=priva
 
 可参考[demo](../openplatform/servicer/views.py)
 
-### 2. JS-SDK
+### 2. C2B支付Schema:
+商户订单模式：用户从商户侧发起订单支付请求，商户生成订单，向币信做下单指令
+```
+bixin://transfer/c2bTransfer?target_addr={}&amount={}&currency={}&message={}&memo={}
+```
+商户余额充值模式：用户从商户侧发起余额请求，商户生成充值订单，向币信做下单指令
+```
+bixin://transfer/c2bDeposit?target_addr={}&amount={}&currency={}&message={}&memo={}
+```
+参数说明：
+```
+target_addr: 转账目标地址
+amount: 金额（订单模式为必需项，充值模式可以为空）
+currency: 币种
+memo: 转账memo（某些币种需要，比如EOS，默认为空）
+message: 转账信息，默认为空
+此外还可以增加额外的自定义参数(可选)，自定义参数格式必须是以"x-"开头，参见C2C支付Schema
+```
+
+### 3. JS-SDK
 
 ```
 function pay(address, amount, note, category, order_id, transfer_type, your_args){
