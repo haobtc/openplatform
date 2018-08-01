@@ -57,11 +57,11 @@ amount: 金额（订单模式为必需项，充值模式可以为空）
 currency: 币种
 memo: 转账memo（某些币种需要，比如EOS，默认为空）
 message: 转账信息，默认为空
-此外还可以增加额外的自定义参数(可选)，自定义参数格式必须是以"x-"开头，参见C2C支付Schema
 ```
+可参考[demo](../openplatform/servicer/views.py)
 
 ### 3. JS-SDK
-
+C2C支付SDK:
 ```
 function pay(address, amount, note, category, order_id, transfer_type, your_args){
   bixin.openPay({
@@ -80,6 +80,25 @@ function pay(address, amount, note, category, order_id, transfer_type, your_args
     error: function(err) {
     }
   });
+}
+```
+C2B支付SDK:
+```
+function open_c2b_pay(currency, address, amount, message, memo){
+  env_exec(function(){
+    bixin.openC2bPay({
+      currency: currency,
+      recipientAddr: address,
+      amount: amount,
+      message: message,
+      memo: memo,
+      success: function(res) {
+        console.log('c2b pay success');
+      },
+      error: function(err) {
+      }
+    });
+  })
 }
 ```
 
