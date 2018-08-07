@@ -100,7 +100,7 @@ def scheme_detail(request):
     protocol3 = format_conversation_protocol(user_target_id, 'private')
     protocol4 = format_conversation_protocol(bot_target_id, 'bot', 'test', 'action_demo')
 
-    protocol5 = format_c2b_transfer_protocol('c2bTransfer', eth_address, 'ETH', 'c2b pay demo', amount, memo='')
-    protocol6 = format_c2b_transfer_protocol('c2bDeposit', eth_address, 'ETH', 'c2b deposit demo', memo='')
+    protocol5 = format_c2b_transfer_protocol('c2bTransfer', eth_address, 'ETH', 'c2b pay demo', amount, memo='', order_id='')
+    protocol6 = format_c2b_transfer_protocol('c2bDeposit', eth_address, 'ETH', 'c2b deposit demo', memo='', order_id='')
 
     return render(request, 'scheme_detail.html', locals())

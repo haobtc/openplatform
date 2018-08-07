@@ -137,7 +137,7 @@ function open_pay_with_order_args(currency, address, amount, category, message, 
   })
 }
 
-function open_c2b_pay(currency, address, amount, message, memo){
+function open_c2b_pay(currency, address, amount, message, memo, order_id){
   env_exec(function(){
     bixin.openC2bPay({
       currency: currency,
@@ -145,6 +145,7 @@ function open_c2b_pay(currency, address, amount, message, memo){
       amount: amount,
       message: message,
       memo: memo,
+      order_id: order_id,
       success: function(res) {
         console.log('c2b pay success');
       },
@@ -154,13 +155,14 @@ function open_c2b_pay(currency, address, amount, message, memo){
   })
 }
 
-function open_c2b_deposit(currency, address, message, memo){
+function open_c2b_deposit(currency, address, message, memo, order_id){
   env_exec(function(){
     bixin.openC2bDeposit({
       currency: currency,
       recipientAddr: address,
       message: message,
       memo: memo,
+      order_id: order_id,
       success: function(res) {
         console.log('c2b deposit success');
       },

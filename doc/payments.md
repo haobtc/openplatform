@@ -44,11 +44,11 @@ bixin://currency_transfer/?target_id=b620ea4e87b0e5d3f12dd15c97a&conv_type=priva
 ### 2. C2B支付Schema:
 商户订单模式：用户从商户侧发起订单支付请求，商户生成订单，向币信做下单指令
 ```
-bixin://transfer/c2bTransfer?target_addr={}&amount={}&currency={}&message={}&memo={}
+bixin://transfer/c2bTransfer?target_addr={}&amount={}&currency={}&message={}&memo={}&order_id={}
 ```
 商户余额充值模式：用户从商户侧发起余额请求，商户生成充值订单，向币信做下单指令
 ```
-bixin://transfer/c2bDeposit?target_addr={}&amount={}&currency={}&message={}&memo={}
+bixin://transfer/c2bDeposit?target_addr={}&amount={}&currency={}&message={}&memo={}&order_id={}
 ```
 参数说明：
 ```
@@ -57,6 +57,7 @@ amount: 金额（订单模式为必需项，充值模式可以为空）
 currency: 币种
 memo: 转账memo（某些币种需要，比如EOS，默认为空）
 message: 转账信息，默认为空
+order_id: 商户自定义的系统订单id（用于通过API接口查询订单详情，对于线下静态二维码可设置为空）
 ```
 可参考[demo](../openplatform/servicer/views.py)
 
