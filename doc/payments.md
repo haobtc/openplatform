@@ -54,7 +54,7 @@ bixin://transfer/c2bDeposit?target_addr={}&amount={}&currency={}&message={}&memo
 ```
 target_addr: 转账目标地址
 amount: 金额（订单模式为必需项，充值模式可以为空）
-currency: 币种
+currency: 币种简称，如：BTC、ETH、EOS
 memo: 转账memo（某些币种需要，比如EOS，默认为空）
 message: 转账信息，默认为空
 order_id: 商户自定义的系统订单id（用于通过API接口查询订单详情，对于线下静态二维码可设置为空）
