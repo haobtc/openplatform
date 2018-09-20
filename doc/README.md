@@ -33,7 +33,7 @@ Bot Api提供了服务号于用户交互的详尽的交互Api，第三方可以�
 
 对于使用币信钱包快捷支付的第三方应用，需要按照这个此步骤进行集成。
 
-## [API列表](https://documenter.getpostman.com/view/2077000/6tc3iyY#137b92c0-7e74-210d-a7ea-57747e151410)
+## [API列表](https://documenter.getpostman.com/view/1905296/RWaNQSko)
 
 币信对外所有开放api的汇总和相关介绍。
 
