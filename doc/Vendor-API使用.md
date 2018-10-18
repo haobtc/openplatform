@@ -160,7 +160,7 @@ GET https://bixin.im/platform/api/v1/transfer/list?access_token=30e57a621fa2474c
 | order | 选填。 default asc |
 | status | 选填。 'ADMIN_REQUIRED'、'ADMIN_DENIED'、'SUCCESS'。 default is all |
 | type | 选填。 'deposit', 'withdraw' |
-
+| order_id | 选填。 获取指定 order_id 的转账列表 |
 
 返回：
 

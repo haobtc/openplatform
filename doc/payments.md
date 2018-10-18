@@ -6,9 +6,9 @@
 
 ## 币信支付协议
 
-### 1. 支付Schema:
+### 1. C2C支付Schema:
 
-对地址转账:
+用户对用户地址转账:
 
 ```
 bixin://currency_transfer/?target_addr={}&amount={}&currency={}&category={}&message={}&order_id={}&transfer_type={}
@@ -41,8 +41,28 @@ bixin://currency_transfer/?target_id=b620ea4e87b0e5d3f12dd15c97a&conv_type=priva
 
 可参考[demo](../openplatform/servicer/views.py)
 
-### 2. JS-SDK
+### 2. C2B支付Schema:
+商户订单模式：用户从商户侧发起订单支付请求，商户生成订单，向币信做下单指令
+```
+bixin://transfer/c2bTransfer?target_addr={}&amount={}&currency={}&message={}&memo={}&order_id={}
+```
+商户余额充值模式：用户从商户侧发起余额请求，商户生成充值订单，向币信做下单指令
+```
+bixin://transfer/c2bDeposit?target_addr={}&amount={}&currency={}&message={}&memo={}&order_id={}
+```
+参数说明：
+```
+target_addr: 转账目标地址
+amount: 金额（订单模式为必需项，充值模式可以为空）
+currency: 币种简称，如：BTC、ETH、EOS
+memo: 转账memo（某些币种需要，比如EOS，默认为空）
+message: 转账信息，默认为空
+order_id: 商户自定义的系统订单id（用于通过API接口查询订单详情，对于线下静态二维码可设置为空）
+```
+可参考[demo](../openplatform/servicer/views.py)
 
+### 3. JS-SDK
+C2C支付SDK:
 ```
 function pay(address, amount, note, category, order_id, transfer_type, your_args){
   bixin.openPay({
@@ -61,6 +81,25 @@ function pay(address, amount, note, category, order_id, transfer_type, your_args
     error: function(err) {
     }
   });
+}
+```
+C2B支付SDK:
+```
+function open_c2b_pay(currency, address, amount, message, memo){
+  env_exec(function(){
+    bixin.openC2bPay({
+      currency: currency,
+      recipientAddr: address,
+      amount: amount,
+      message: message,
+      memo: memo,
+      success: function(res) {
+        console.log('c2b pay success');
+      },
+      error: function(err) {
+      }
+    });
+  })
 }
 ```
 

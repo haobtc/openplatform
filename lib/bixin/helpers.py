@@ -52,6 +52,24 @@ def format_transfer_protocol(target_addr, currency,
 
     return protocal
 
+
+def format_c2b_transfer_protocol(scheme_path, target_addr, currency, message, amount=None, memo='', order_id=''):
+    params = {
+        'target_addr': target_addr,
+        'currency': currency,
+        'message': message,
+        'memo': memo,
+        'order_id': order_id
+    }
+
+    if scheme_path == 'c2bTransfer':
+        params['amount'] = amount
+
+    protocal = 'bixin://transfer/%s?%s' % (scheme_path, urlencode(params))
+
+    return protocal
+
+
 def format_conversation_protocol(target_id, conv_type, text='', event=None):
     params = {
         'target_id': target_id,

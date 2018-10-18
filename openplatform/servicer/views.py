@@ -10,7 +10,7 @@ from django.views.decorators.http import require_POST
 from django.conf import settings
 
 from bixin.decorators import login_required
-from bixin.helpers import get_random_str, create_signature, get_timestamp, format_transfer_protocol, format_conversation_protocol
+from bixin.helpers import get_random_str, create_signature, get_timestamp, format_transfer_protocol, format_c2b_transfer_protocol, format_conversation_protocol
 from servicer.bot_service import BotService
 from bixin.client import Client
 from bixin.models import Deposit
@@ -99,5 +99,8 @@ def scheme_detail(request):
 
     protocol3 = format_conversation_protocol(user_target_id, 'private')
     protocol4 = format_conversation_protocol(bot_target_id, 'bot', 'test', 'action_demo')
+
+    protocol5 = format_c2b_transfer_protocol('c2bTransfer', eth_address, 'ETH', 'c2b pay demo', amount, memo='', order_id='')
+    protocol6 = format_c2b_transfer_protocol('c2bDeposit', eth_address, 'ETH', 'c2b deposit demo', memo='', order_id='')
 
     return render(request, 'scheme_detail.html', locals())

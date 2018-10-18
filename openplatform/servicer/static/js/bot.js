@@ -13,7 +13,7 @@ function env_exec(func) {
     nonce: nonce, //生成签名的随机串
     signature: sign, //签名
     callback: callback, //vendor的callback地址
-    jsApiList: ["openPay", "scanQRCode", "chooseContact", "openConv", "previewImage", "sendMiniArticle"], // 需要调用的api名字列表，如果有不支持的API，则调用bixin.error();
+    jsApiList: ["openPay", "scanQRCode", "chooseContact", "openConv", "previewImage", "sendMiniArticle", "openC2bPay", "openC2bDeposit"], // 需要调用的api名字列表，如果有不支持的API，则调用bixin.error();
   });
 
   bixin.ready(function(){
@@ -130,6 +130,41 @@ function open_pay_with_order_args(currency, address, amount, category, message, 
       'x-name': your_args,
       success: function(res) {
         console.log('pay success');
+      },
+      error: function(err) {
+      }
+    });
+  })
+}
+
+function open_c2b_pay(currency, address, amount, message, memo, order_id){
+  env_exec(function(){
+    bixin.openC2bPay({
+      currency: currency,
+      recipientAddr: address,
+      amount: amount,
+      message: message,
+      memo: memo,
+      order_id: order_id,
+      success: function(res) {
+        console.log('c2b pay success');
+      },
+      error: function(err) {
+      }
+    });
+  })
+}
+
+function open_c2b_deposit(currency, address, message, memo, order_id){
+  env_exec(function(){
+    bixin.openC2bDeposit({
+      currency: currency,
+      recipientAddr: address,
+      message: message,
+      memo: memo,
+      order_id: order_id,
+      success: function(res) {
+        console.log('c2b deposit success');
       },
       error: function(err) {
       }
