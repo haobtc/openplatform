@@ -25,7 +25,7 @@ bixin://login/confirm/?url={}
 此处的url应为(需要进行urlencode):
 
 ```
-https://login.bixin.im/?uuid={vendor_name}:{your-token}
+https://login.bixin.im/qrcode/?uuid={vendor_name}:{your-token}
 ```
 
 举例：
