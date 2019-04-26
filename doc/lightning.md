@@ -27,6 +27,12 @@ POST https://bixin.com/platform/api/v1/lightning/invoice/create
 }
 ```
 
+注意：
+1. invoice有效期1小时，过期将不能使用。
+2. 一个invoice只能使用一次。
+3. invoice amount不填默认0，数量将由付款方填写。
+4. invoice amount最大值目前只支持到1000000聪
+
 
 ### 查看invoice详情
 ```
@@ -39,7 +45,7 @@ GET https://bixin.com/platform/api/v1/lightning/invoice/detail?access_token=5c83
 | --------- | ----------------- |
 | id        | 必填.  |
 
-返回
+返回：
 ```
 {
     "status": "SUCCESS",
@@ -51,6 +57,7 @@ GET https://bixin.com/platform/api/v1/lightning/invoice/detail?access_token=5c83
     "memo": ""
 }
 ```
+status状态分为 PENDING，EXPIRED，SUCCESS
 
 
 ### 获取invoice列表
