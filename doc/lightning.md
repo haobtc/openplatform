@@ -51,6 +51,7 @@ GET https://bixin.com/platform/api/v1/lightning/invoice/detail?access_token=5c83
     "status": "SUCCESS",
     "ok": true,
     "created_at": "2019-04-25T12:26:36.798Z",
+    "expired_at": "2019-04-25T13:26:36.798Z",
     "id": "ad1b880d49ee4bb9bade34718ad21918",
     "amount": "1",
     "invoice": "lnbc10n1pwvrfmupp5lf9admrmnlxwh2lfhl8x88lr9e38rq5ypwrqclft4e40384nxxx",
@@ -79,6 +80,7 @@ GET https://bixin.com/platform/api/v1/lightning/invoice/list?access_token=5c8307
         {
             "status": "PENDING",
             "created_at": "2019-04-25T12:25:42.152Z",
+            "expired_at": "2019-04-25T13:25:42.152Z",
             "id": "6e7cde1868764cb8a74e5f6a0e78b1bb",
             "amount": "0",
             "invoice": "lnbc10n1pwvrfmupp5lf9admrmnlxwh2lfhl8x88lr9e38rq5ypwrqclft4e40384nxxx",
@@ -87,6 +89,7 @@ GET https://bixin.com/platform/api/v1/lightning/invoice/list?access_token=5c8307
         {
             "status": "PENDING",
             "created_at": "2019-04-25T12:26:36.798Z",
+            "expired_at": "2019-04-25T13:25:42.152Z",
             "id": "ad1b880d49ee4bb9bade34718ad21918",
             "amount": "1",
             "invoice": "lnbc10n1pwvrfmupp5lf9admrmnlxwh2lfhl8x88lr9e38rq5ypwrqclft4e40384nxxx",
