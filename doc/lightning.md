@@ -39,7 +39,7 @@ GET https://bixin.com/platform/api/v1/lightning/invoice/detail?access_token=5c83
 | --------- | ----------------- |
 | id        | 必填.  |
 
-Response返回
+返回
 ```
 {
     "status": "SUCCESS",
